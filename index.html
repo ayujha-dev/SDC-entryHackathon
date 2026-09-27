@@ -1,148 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mustang - Power, Freedom, Legacy</title>
-    
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Oswald:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- SoftAurora Background -->
+    <div id="aurora-bg"></div>
 
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-brand">MUSTANG</div>
-        <div class="nav-links">
-            <a href="#models">Models</a>
-            <a href="#performance">Performance</a>
-            <a href="#heritage">Heritage</a>
-            <button id="theme-toggle" aria-label="Toggle Dark Mode">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun" style="display:none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-            </button>
-        </div>
-        <div class="nav-cta">
-            <!-- SpecularButton Target -->
-            <button id="nav-build-btn" class="vanilla-specular-button">Build Yours</button>
-        </div>
+      <div class="nav-brand">
+        <img
+          src="assets/ford-mustang-logo.svg"
+          alt="Ford Mustang Logo"
+          height="40"
+          style="object-fit: contain" />
+      </div>
+      <div class="nav-links">
+        <a href="#performance">Performance</a>
+        <a href="#design">Design</a>
+        <a href="#process">Journey</a>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon-moon">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon-sun"
+            style="display: none">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+        </button>
+      </div>
+      <div class="nav-cta">
+        <!-- SpecularButton Target -->
+        <button class="vanilla-specular-button" data-target="#process">
+          Build Yours
+        </button>
+      </div>
     </nav>
 
     <!-- Hero Section (ScrollExpand) -->
     <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                Drive the <br/>
-                <span id="rotating-text-container" class="rotating-text"></span>
-            </h1>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Drive the <br />
+          <div class="rotating-text-wrapper">
+            <span id="rotating-text-container" class="rotating-text"></span>
+          </div>
+        </h1>
+        <div class="scroll-hint">
+          <span>Scroll to ignite</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
         </div>
-        
-        <!-- ScrollExpand Target -->
-        <div id="scroll-expand-container" class="scroll-expand">
-            <div class="scroll-expand__track">
-                <div class="scroll-expand__stage">
-                    <div class="scroll-expand__frame">
-                        <img class="scroll-expand__media" src="https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2070&auto=format&fit=crop" alt="Ford Mustang driving">
-                        <div class="scroll-expand__scrim"></div>
-                    </div>
-                </div>
+      </div>
+
+      <!-- ScrollExpand Target -->
+      <div id="scroll-expand-container" class="scroll-expand">
+        <div class="scroll-expand__track">
+          <div class="scroll-expand__stage">
+            <div class="scroll-expand__frame">
+              <img
+                class="scroll-expand__media"
+                src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop"
+                alt="Ford Mustang dark aggressive" />
+              <div class="scroll-expand__scrim"></div>
             </div>
+            <!-- Cinematic Text (Layered above frame) -->
+            <div id="cinematic-text-1" class="cinematic-text">
+              A Legacy Forged in Steel.
+            </div>
+            <div id="cinematic-text-2" class="cinematic-text">
+              Performance Without Compromise.
+            </div>
+            <div id="cinematic-text-3" class="cinematic-text">
+              The Ultimate Driving Experience.
+            </div>
+            <div id="cinematic-text-4" class="cinematic-text">
+              Awaken Your Senses.
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Stats / We've cracked the code -->
-    <section class="stats-section">
-        <div class="container">
-            <h2 class="section-title">Engineered for dominance.</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">🏎️</div>
-                    <h3>480 HP</h3>
-                    <p>Experience unrelenting power with the roaring 5.0L Ti-VCT V8 engine.</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⏱️</div>
-                    <h3>4.3s</h3>
-                    <p>0-60 mph. Instant acceleration that pins you to your seat.</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🏁</div>
-                    <h3>Track Ready</h3>
-                    <p>MagneRide® Damping System for lightning-quick responsiveness.</p>
-                </div>
+    <section id="performance" class="stats-section">
+      <div class="container">
+        <h2 class="section-title">Engineered for dominance.</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m12 12 4-4" />
+                <path d="M12 2v2" />
+                <path d="M22 12h-2" />
+                <path d="M12 22v-2" />
+                <path d="M2 12h2" />
+              </svg>
             </div>
+            <h3>480 HP</h3>
+            <p>
+              Experience unrelenting power with the roaring 5.0L Ti-VCT V8
+              engine.
+            </p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3>4.3s</h3>
+            <p>0-60 mph. Instant acceleration that pins you to your seat.</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                <line x1="4" x2="4" y1="22" y2="15" />
+              </svg>
+            </div>
+            <h3>Track Ready</h3>
+            <p>MagneRide® Damping System for lightning-quick responsiveness.</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Feature Block 1 (See the Big Picture) -->
-    <section class="feature-block">
-        <div class="container feature-flex">
-            <div class="feature-content">
-                <h2>Iconic Design, Evolved.</h2>
-                <p>The legendary silhouette has been sharpened. Aerodynamic lines meet aggressive styling, ensuring that every glance leaves a lasting impression.</p>
-                <button class="vanilla-specular-button feature-btn">Explore Exterior</button>
-            </div>
-            <div class="feature-image">
-                <img src="https://images.unsplash.com/photo-1611821064430-0d40221e4f98?q=80&w=2000&auto=format&fit=crop" alt="Mustang Front Grille">
-            </div>
+    <section id="design" class="feature-block">
+      <div class="container feature-flex">
+        <div class="feature-content">
+          <h2>Iconic Design, Evolved.</h2>
+          <p>
+            The legendary silhouette has been sharpened. Aerodynamic lines meet
+            aggressive styling, ensuring that every glance leaves a lasting
+            impression.
+          </p>
+          <button
+            class="vanilla-specular-button feature-btn"
+            data-target="#process">
+            Explore Exterior
+          </button>
         </div>
+        <div class="feature-image">
+          <img
+            src="https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=2000&auto=format&fit=crop"
+            alt="Mustang Front Grille" />
+        </div>
+      </div>
     </section>
 
     <!-- Process / Map Your Success -->
-    <section class="process-section">
-        <div class="container">
-            <h2 class="section-title center">Your Mustang Journey</h2>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-num">01</div>
-                    <h3>Select Model</h3>
-                    <p>Choose from EcoBoost, GT, or the track-ready Dark Horse.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">02</div>
-                    <h3>Customize</h3>
-                    <p>Select your paint, performance packages, and interior trims.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-num">03</div>
-                    <h3>Dominate</h3>
-                    <p>Take delivery and own the open road.</p>
-                </div>
-            </div>
+    <section id="process" class="process-section">
+      <div class="container">
+        <h2 class="section-title center">Your Mustang Journey</h2>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <h3>Select Model</h3>
+            <p>Choose from EcoBoost, GT, or the track-ready Dark Horse.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <h3>Customize</h3>
+            <p>Select your paint, performance packages, and interior trims.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <h3>Dominate</h3>
+            <p>Take delivery and own the open road.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Interactive WebGL Carousel -->
+    <section id="carousel-section" style="padding: 4rem 0">
+      <h2 class="section-title center">The Lineup</h2>
+      <div id="flex-carousel-container" class="flex-carousel"></div>
     </section>
 
     <!-- Large Landscape Image -->
     <section class="full-width-image">
-        <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=2070&auto=format&fit=crop" alt="Mustang on a mountain road">
+      <img
+        src="https://images.unsplash.com/photo-1629897048514-3dd74142ffce?q=80&w=2070&auto=format&fit=crop"
+        alt="Mustang driving fast" />
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <h2>Ready to ride?</h2>
-            <button class="vanilla-specular-button lg-btn">Build & Price</button>
-            <div class="footer-links">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-                <a href="#">Contact</a>
-            </div>
+      <div class="container">
+        <h2>Ready to run?</h2>
+        <button
+          class="vanilla-specular-button lg-btn"
+          onclick="window.location.href = 'https://www.ford.com/cars/mustang/'">
+          Build & Price on Ford.com
+        </button>
+        <div class="footer-links">
+          <a href="https://www.ford.com/cars/mustang/">Official Site</a>
+          <a href="mailto:support@ford.com">Contact Sales</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
         </div>
+      </div>
     </footer>
 
     <!-- Script tags -->
     <!-- Import OGL as ES module for SpecularButton -->
     <script type="importmap">
-        {
-            "imports": {
-                "ogl": "https://cdn.jsdelivr.net/npm/ogl@0.0.117/src/index.mjs"
-            }
+      {
+        "imports": {
+          "ogl": "https://cdn.jsdelivr.net/npm/ogl@0.0.117/src/index.mjs"
         }
+      }
     </script>
     <script type="module" src="script.js"></script>
-</body>
+  </body>
 </html>
