@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initRotatingText();
   initScrollExpand();
   initSpecularButtons();
+  initSoftAurora();
+  initFlexCarousel();
 });
 
 // --- Theme Toggle ---
@@ -692,6 +694,21 @@ function initFlexCarousel() {
       src: "https://images.unsplash.com/photo-1611821064430-0d40221e4f98?q=80&w=1200&auto=format&fit=crop",
       title: "Mustang 1969",
       subtitle: "Classic",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop",
+      title: "Mustang Fastback",
+      subtitle: "Heritage",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?q=80&w=1200&auto=format&fit=crop",
+      title: "Mustang Boss 302",
+      subtitle: "Legendary",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1200&auto=format&fit=crop",
+      title: "Mustang Convertible",
+      subtitle: "Open Air",
     },
   ];
 
